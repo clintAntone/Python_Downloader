@@ -8,7 +8,7 @@ def downloader(video_link, download_dir=None):
         title = tube.title
 
         print("Now downloading, '"+ str(title) +"'")
-        video = tube.streams.filter(progressive=True, file_extension='mp4').first()
+        video = tube.streams.filter(progressive=True, file_extension='mp4').last()
         print('FileSize: ' + str(round(video.filesize/(1024*1024))) + 'MB')
 
         if download_dir is not None:
